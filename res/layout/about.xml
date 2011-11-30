@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:gravity="center|bottom" android:orientation="vertical"
+    android:background="@drawable/welcomebg">
+    <TextView 
+        android:id="@+id/about"
+        android:text="您好，感谢您的使用！我们是
+        	一群喜欢户外运动的业余开发者，目前应用还有很多需要改进的地方，
+        	如果有任何问题，希望您能与我们取得联系，谢谢！xuchenxing7815@163.com" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_marginTop="20dip"
+        android:typeface="sans" 
+        android:shadowDx="0" 
+        android:shadowDy="2"
+        android:shadowRadius="1" 
+        android:shadowColor="#FFFFFF"
+        android:textColor="#444444" 
+        android:textSize="20dip"
+        android:paddingBottom="30dip" 
+        android:gravity="bottom">
+    </TextView>
+</LinearLayout>
