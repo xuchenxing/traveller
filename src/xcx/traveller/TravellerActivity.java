@@ -1,14 +1,19 @@
 package xcx.traveller;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import android.R.anim;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.baidu.mapapi.BMapManager;
 import com.baidu.mapapi.GeoPoint;
@@ -160,5 +165,36 @@ public class TravellerActivity extends MapActivity {
 
 		return super.onOptionsItemSelected(item);
 	}
+	
+	
+	private static Boolean isExit = false;   
+    private static Boolean hasTask = false;   
+    Timer tExit = new Timer();   
+    TimerTask task = new TimerTask() {   
+            
+        @Override  
+        public void run() {   
+            isExit = false;   
+            hasTask = true;   
+        }   
+    };   
+  
+	public boolean onKeyDown(int keyCode, KeyEvent event) {   
+		System.out.println("keycode=" + keyCode +";keyevent=" + event);
+        if(keyCode == KeyEvent.KEYCODE_BACK){   
+//                System.out.println("user back down");   
+                if(isExit == false ) {   
+                        isExit = true;   
+                        Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();   
+                        if(!hasTask) {   
+                                tExit.schedule(task, 2000);   
+                        }} else {   
+                                                                        }   
+                        finish();   
+                        System.exit(0);   
+                }   
+        return false;
+     }                           
+
 
 }
